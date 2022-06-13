@@ -12,7 +12,12 @@ fetch("/api/transaction")
     populateTotal();
     populateTable();
     populateChart();
+  })
+  .catch(err => {
+    console.log(err);
+    saveRecord(data);
   });
+  
 
 function populateTotal() {
   // reduce transaction amounts to a single total value
